@@ -54,6 +54,7 @@ function wireGo(el){
   el.addEventListener('click', ev=>{
     ev.preventDefault();
     if(el.dataset.path) inquiry.pathway=el.dataset.path;
+    if(el.dataset.note){ const n=document.getElementById('r8'); if(n && !n.value) n.value=el.dataset.note; }
     const go=()=>document.querySelector(el.dataset.go).scrollIntoView({behavior:reduced?'auto':'smooth'});
     if(el.classList.contains('btn-dom')){ el.classList.add('pressed'); setTimeout(()=>{el.classList.remove('pressed'); go();},220); }
     else go();
@@ -310,3 +311,24 @@ $('#reqform').addEventListener('submit',async e=>{
   requestAnimationFrame(()=>c.classList.add('in'));
   c.scrollIntoView({behavior:reduced?'auto':'smooth',block:'center'});
 });
+
+/* the two daylight lines: an introduction and a subscription, through the same pipeline */
+function miniForm(id, pathway, fields){
+  const f=$(id); if(!f) return;
+  f.addEventListener('submit', async e=>{
+    e.preventDefault();
+    const payload={ref:makeRef(), ts:new Date().toISOString(), pathway};
+    fields.forEach(([k,sel])=>{ payload[k]=$(sel).value.trim(); });
+    const bad=fields.find(([k,sel])=>$(sel).type==='email' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(payload[k]));
+    if(bad){ $(bad[1]).focus(); return; }
+    const url=(typeof window!=='undefined' && window.EEG_ENDPOINT) || ENDPOINT_FALLBACK;
+    if(url){
+      try{ await fetch(url,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(payload)}); }
+      catch(err){ console.error(pathway+' submit failed', err); }
+    }
+    f.hidden=true;
+    const d=f.parentElement.querySelector('.mini-done'); if(d) d.hidden=false;
+  });
+}
+miniForm('#introform','introduce',[['name','#i1'],['email','#i2'],['organization','#i3'],['why','#i4']]);
+miniForm('#subform','subscribe',[['email','#s1']]);

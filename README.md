@@ -19,9 +19,14 @@ ladder order (Keynote, Conversation, Roundtable, Working Session, Laboratory or 
 Intensive or Offsite, Advisory), each with its line drawing, group label, facts line and the
 staff-delivery line where the ruling places it; copy stays inside the sealed Commercial Architecture
 and the gateway copy document, no natural-next-step language on the buyer page. Remaining before
-launch, in order:
-1. Below-the-fold: programs, institutional pathways, handbook download, subscribe (per skeleton).
-2. Endpoint: deploy endpoint/Code.gs as a web app, set ENDPOINT_FALLBACK in js/gateway.js (or window.EEG_ENDPOINT).
+launch, in order. Below the fold is built (same day): programs, the institutional lane, the
+introduction line and The Starke Perspective subscription, in daylight after the request, wired
+through the same endpoint (pathways pathway-programs, pathway-institutional, introduce, subscribe;
+Code.gs lands introductions and subscriptions on their own sheets and emails the office). HELD:
+the handbook download, because the printed handbook carries prices and the held practice figures;
+it returns only on Ethan's decision (a gateway edition, or as printed).
+1. Endpoint: deploy endpoint/Code.gs as a web app, set ENDPOINT_FALLBACK in js/gateway.js (or window.EEG_ENDPOINT).
+2. Subscriptions currently reach the office by email and sheet; connect to the newsletter tool of record when chosen.
 3. Replace prototype typefaces with the licensed faces of record when purchased (drop-in @font-face swap).
 4. QA against the locked spec, both pixel densities, reduced motion, keyboard.
 
