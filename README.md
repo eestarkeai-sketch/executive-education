@@ -14,12 +14,16 @@ laptops); compact desktop and tablet landscape 881 to 1369px; phone and tablet p
 under (flow hero, in-flow selector steps, stacked reveal, stacked territories and format panels,
 operator portrait above the words). Verified by browser test at 390, 430, 768, 820, 1024, 1280,
 1366, 1440, 1650 and 1920 widths; the routed flow, request, confirmation, strip and reduced
-motion pass at phone size. Remaining before launch, in order:
-1. Formats strip: extend from three panels to the full eight with their line drawings.
-2. Below-the-fold: programs, institutional pathways, handbook download, subscribe (per skeleton).
-3. Endpoint: deploy endpoint/Code.gs as a web app, set ENDPOINT_FALLBACK in js/gateway.js (or window.EEG_ENDPOINT).
-4. Replace prototype typefaces with the licensed faces of record when purchased (drop-in @font-face swap).
-5. QA against the locked spec, both pixel densities, reduced motion, keyboard.
+motion pass at phone size. Formats strip completed the same day: all eight canonical formats in
+ladder order (Keynote, Conversation, Roundtable, Working Session, Laboratory or Workshop, Series,
+Intensive or Offsite, Advisory), each with its line drawing, group label, facts line and the
+staff-delivery line where the ruling places it; copy stays inside the sealed Commercial Architecture
+and the gateway copy document, no natural-next-step language on the buyer page. Remaining before
+launch, in order:
+1. Below-the-fold: programs, institutional pathways, handbook download, subscribe (per skeleton).
+2. Endpoint: deploy endpoint/Code.gs as a web app, set ENDPOINT_FALLBACK in js/gateway.js (or window.EEG_ENDPOINT).
+3. Replace prototype typefaces with the licensed faces of record when purchased (drop-in @font-face swap).
+4. QA against the locked spec, both pixel densities, reduced motion, keyboard.
 
 ## Cutover runbook (Ethan's hands, batched, about five minutes in Wix)
 1. Repo: eestarkeai-sketch/executive-education (create private; flip public and enable Pages
