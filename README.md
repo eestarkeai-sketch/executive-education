@@ -7,13 +7,19 @@ selector logic: Gateway_Selector_Routing_Matrix_v1. Canonical home of these docu
 
 ## State of this bundle (v1.0, routing v1.1)
 Corrected motion build with the four-answer routing engine, externalized assets, semantic
-controls, reduced-motion support, unique inquiry references. Remaining before launch, in order:
+controls, reduced-motion support, unique inquiry references. Responsive layers added
+2026-08-30: the approved desktop composition holds from 1370px up (hero bottom cluster is one
+grid row, headline capped by viewport height so it never collides with the proposition on short
+laptops); compact desktop and tablet landscape 881 to 1369px; phone and tablet portrait 880px and
+under (flow hero, in-flow selector steps, stacked reveal, stacked territories and format panels,
+operator portrait above the words). Verified by browser test at 390, 430, 768, 820, 1024, 1280,
+1366, 1440, 1650 and 1920 widths; the routed flow, request, confirmation, strip and reduced
+motion pass at phone size. Remaining before launch, in order:
 1. Formats strip: extend from three panels to the full eight with their line drawings.
-2. Mobile and tablet layout pass (the current build is desktop-first).
-3. Below-the-fold: programs, institutional pathways, handbook download, subscribe (per skeleton).
-4. Endpoint: deploy endpoint/Code.gs as a web app, set ENDPOINT_URL in js/gateway.js.
-5. Replace prototype typefaces with the licensed faces of record when purchased (drop-in @font-face swap).
-6. QA against the locked spec, both pixel densities, reduced motion, keyboard.
+2. Below-the-fold: programs, institutional pathways, handbook download, subscribe (per skeleton).
+3. Endpoint: deploy endpoint/Code.gs as a web app, set ENDPOINT_FALLBACK in js/gateway.js (or window.EEG_ENDPOINT).
+4. Replace prototype typefaces with the licensed faces of record when purchased (drop-in @font-face swap).
+5. QA against the locked spec, both pixel densities, reduced motion, keyboard.
 
 ## Cutover runbook (Ethan's hands, batched, about five minutes in Wix)
 1. Repo: eestarkeai-sketch/executive-education (create private; flip public and enable Pages
