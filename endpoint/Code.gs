@@ -7,7 +7,7 @@
  * (an introduction, a subscription) arrive through the same endpoint and land on
  * their own sheets.
  */
-var OFFICE = 'ethan@ethanstarke.com';
+var OFFICE = 'office@ethanstarke.com';
 
 function sheet(name, header) {
   var book = SpreadsheetApp.getActiveSpreadsheet();

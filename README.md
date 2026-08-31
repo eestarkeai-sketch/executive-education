@@ -37,21 +37,29 @@ unreachable before), and the quietest text was lifted to WCAG AA contrast agains
 (answer buttons, counters, notes, small labels, daylight gold labels via --goldink, placeholders,
 day-mode nav). Favicon and touch icon built from the mark; share meta added without an image.
 
-Remaining, Ethan's hands, batched:
-1. Endpoint: deploy endpoint/Code.gs as a web app, set ENDPOINT_FALLBACK in js/gateway.js (or window.EEG_ENDPOINT).
-2. Subscriptions currently reach the office by email and sheet; connect to the newsletter tool of record when chosen.
-3. Licensed typefaces, if and when purchased (drop-in @font-face swap; the self-hosted open faces are production-ready as they stand).
+Review round one (2026-08-31, commit 36428d9): header mark beside the wordmark (goldlt at
+night, ink by day), a Top control, the six territories as a side-by-side strip like the formats,
+and summary.html, a printable sheet of every session by territory and every format with pick
+boxes that carry into the request (?pick=...&fmt=...). Certificate hierarchy corrected to canon
+(9127e92): Resilient Leadership is the flagship certificate cohort with three focused
+specializations, never four parallel certificates. Endpoint live (9d9a0ed): Apps Script web app,
+sheet "Gateway Inquiries".
 
-## Cutover runbook (Ethan's hands, batched, about five minutes in Wix)
-1. Repo: eestarkeai-sketch/executive-education (private; flip public and enable Pages from
-   main; CNAME file is already in the bundle). In the same commit, remove the line
-   <meta name="robots" content="noindex"> from index.html so the page can be indexed.
-2. DNS: in the Wix domain zone, ADD a CNAME record: executive-education -> eestarkeai-sketch.github.io
-   (additive; touch nothing else).
-3. Wix URL Redirect Manager: /speaking, /creativity, /executive-education -> https://executive-education.ethanstarke.com
-4. Wix editor, same sitting: nav relabel and the front-page logo strip replaced with the unified
-   typographic wall (Ryan, Transwestern, Hunt Energy included per the register).
-5. Figures: the three practice figures return to the record screen only on Ethan's provenance
+## Launch record (2026-08-31, on Ethan's "launch")
+1. noindex removed (828d5da); repository public; GitHub Pages from main, built.
+2. DNS: CNAME executive-education -> eestarkeai-sketch.github.io added in the Wix zone (additive).
+3. Wix redirects: /speaking, /creativity, /executive-education -> the gateway (exact).
+4. Wix front page: logos replaced by the typographic name wall; Speaking page removed; menu item
+   and home tile relinked to the gateway. Published on Ethan's "publish".
+5. HTTPS: GitHub issues the certificate after its domain check; then `_launch.py https`
+   (https_enforced) and the three redirects switched from http to https targets.
+
+Remaining, Ethan's hands:
+1. Subscriptions currently reach the office by email and sheet; connect to the newsletter tool of record when chosen.
+2. Licensed typefaces, if and when purchased (drop-in @font-face swap; the self-hosted open faces are production-ready as they stand).
+3. Figures: the three practice figures return to the record screen only on Ethan's provenance
    confirmation (Proof and Evidence Register, amendment of 2026-08-30).
+4. Office address: once office@ethanstarke.com exists, set OFFICE in endpoint/Code.gs, deploy a
+   new version of the web app (same URL), and the page's reply line and footers name office@.
 
-No pricing appears anywhere. No testimonials by design. Roster held back per the launch decision.
+No pricing appears anywhere. No testimonials by design. Roster held back from the gateway per the launch decision.
