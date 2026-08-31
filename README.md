@@ -63,3 +63,35 @@ Remaining, Ethan's hands:
    new version of the web app (same URL), and the page's reply line and footers name office@.
 
 No pricing appears anywhere. No testimonials by design. Roster held back from the gateway per the launch decision.
+
+## Rename to Executive Engagements (2026-08-31, on Ethan's ruling)
+Ethan ruled that his correct description is Executive Advisor, not educator, and that the
+subdomain, the Wix redirects and the Wix menu item are all renamed Executive Engagements.
+
+Commit b09ec10, page copy: eyebrow "Ethan Starke - Executive Advisor"; display headline line one
+"Executive advisory"; page title, meta description, og:title; summary.html title and eyebrow.
+The institutional lane paragraph deliberately keeps "executive education pathways for
+institutions", because there the phrase names the buyer's own department, not Ethan's practice.
+
+Commit f4d643d, address: CNAME, og:url and canonical moved to
+executive-engagements.ethanstarke.com. The CNAME record was added additively in the Wix zone
+through the dashboard, not the Domain DNS API, because that API replaces one record object per
+type and the zone carries the Google Workspace MX records; the five MX records were verified
+unchanged after the write, and the new host resolved on both Cloudflare and Google resolvers.
+
+The certificate issued immediately on the new hostname (state approved, expires 2026-11-29) and
+https is enforced. The previous hostname had been stuck in state "new" for twenty-two hours
+because it was registered with GitHub three times during launch while DNS was still propagating;
+a clean hostname got it on the first attempt.
+
+Consequence, recorded on purpose: GitHub Pages serves one custom domain per repository, so
+executive-education.ethanstarke.com is no longer served by this repo and returns a GitHub 404.
+It was live one day. The four Wix redirects (/speaking, /creativity, /executive-education and a
+new /executive-engagements) all point to https://executive-engagements.ethanstarke.com, and the
+Wix menu item and the home tile were repointed and the site published, so every route people
+actually use still works. A one-file forwarding repository could preserve the old hostname if
+Ethan wants it; not built.
+
+Still carrying the older framing and not changed here: Gateway_Spec_v1.0_LOCKED Part 11.2 names
+executive-education.ethanstarke.com as the CNAME of record. That is now superseded. The locked
+document is not edited; the correction belongs in the Portfolio errata record on Ethan's word.
