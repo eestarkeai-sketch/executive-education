@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sessions and formats at a glance · Ethan Starke · Executive Education</title>
+<meta name="theme-color" content="#F1E9D6">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<style>
+@font-face{font-family:'FrauncesDisp';src:url(fonts/fraunces-disp.woff2) format('woff2');font-weight:100 900;font-style:normal;font-display:swap;}
+@font-face{font-family:'Fraunces';src:url(fonts/fraunces-var.woff2) format('woff2');font-weight:100 900;font-style:normal;font-display:swap;}
+@font-face{font-family:'Fraunces';src:url(fonts/fraunces-var-italic.woff2) format('woff2');font-weight:100 900;font-style:italic;font-display:swap;}
+@font-face{font-family:'Archivo';src:url(fonts/archivo-var.woff2) format('woff2');font-weight:100 900;font-style:normal;font-display:swap;}
+:root{--cream:#F1E9D6;--creamhi:#FBF6EA;--ink:#20242B;--slate:#5C6472;--gold:#C7A24E;--goldbr:#8A6D2F;--goldink:#6F5624;--rule:rgba(138,109,47,.28);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Fraunces',Georgia,serif;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;font-optical-sizing:auto;}
+h1,h2{font-family:'FrauncesDisp',Georgia,serif;-webkit-text-stroke:0.32px currentColor;font-weight:340;}
+.wrap{max-width:1240px;margin:0 auto;padding:0 6vw;}
+header{display:flex;align-items:center;justify-content:space-between;height:84px;border-bottom:1px solid var(--rule);}
+.brand{display:flex;align-items:center;gap:16px;text-decoration:none;color:var(--ink);}
+.brand .mark{width:21px;height:33px;background:var(--ink);-webkit-mask:url(img/mark-goldlt.webp) center/contain no-repeat;mask:url(img/mark-goldlt.webp) center/contain no-repeat;}
+.brand .wordmark{font-family:'FrauncesDisp',Georgia,serif;font-size:18px;letter-spacing:.34em;text-transform:uppercase;}
+header a.back{font-family:'Archivo',Arial,sans-serif;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(32,36,43,.78);text-decoration:none;}
+header a.back:hover{color:var(--goldink);}
+.eyebrow{font-family:'Archivo',Arial,sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--goldink);}
+h1{margin-top:14px;font-size:clamp(34px,4vw,58px);line-height:1.08;letter-spacing:-.008em;}
+.lead{margin-top:18px;max-width:640px;font-weight:300;font-size:17px;line-height:1.62;color:var(--slate);}
+.intro{padding:9vh 0 6vh;}
+h2{font-size:clamp(26px,2.4vw,36px);margin:7vh 0 20px;}
+.tablewrap{overflow-x:auto;}
+table{width:100%;border-collapse:collapse;font-size:15.5px;line-height:1.5;}
+th,td{text-align:left;vertical-align:top;padding:16px 18px 16px 0;border-top:1px solid var(--rule);}
+thead th{font-family:'Archivo',Arial,sans-serif;font-weight:500;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--goldink);border-top:none;padding-bottom:10px;}
+tbody th[scope="rowgroup"]{width:26%;font-weight:360;font-size:18px;line-height:1.3;padding-right:28px;}
+tbody th .tn{display:block;font-family:'Archivo',Arial,sans-serif;font-weight:400;font-size:11px;letter-spacing:.3em;color:var(--goldink);margin-bottom:8px;}
+tbody th .sit{margin-top:10px;font-weight:300;font-style:italic;font-size:14.5px;line-height:1.5;color:var(--slate);}
+td.t{width:30%;font-weight:400;font-size:17px;}
+td.t label{display:flex;gap:12px;align-items:flex-start;cursor:pointer;}
+td.t input{margin-top:6px;accent-color:var(--goldbr);width:15px;height:15px;flex:0 0 15px;}
+td.t .sub{margin-top:6px;font-style:italic;font-weight:300;font-size:14px;color:var(--goldink);padding-left:27px;}
+td.l{font-weight:300;color:var(--slate);}
+td.g{width:16%;font-family:'Archivo',Arial,sans-serif;font-weight:500;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--goldink);padding-top:20px;}
+.formats td.t{width:22%;}
+.bar{position:sticky;bottom:0;background:rgba(241,233,214,.94);backdrop-filter:blur(8px);border-top:1px solid var(--rule);padding:18px 0;margin-top:6vh;display:flex;gap:16px;align-items:center;flex-wrap:wrap;}
+.bar .count{font-family:'Archivo',Arial,sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--slate);margin-right:auto;}
+.btn{font-family:'Archivo',Arial,sans-serif;font-weight:500;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink);background:none;border:1px solid rgba(138,109,47,.6);padding:16px 24px;cursor:pointer;white-space:nowrap;transition:background .4s,color .4s,border-color .4s;text-decoration:none;}
+.btn:hover{background:var(--gold);border-color:var(--gold);color:#060A14;}
+.btn.gold{background:var(--gold);border-color:var(--goldbr);color:#060A14;}
+.btn.gold:hover{background:#DCC07A;}
+.btn:focus-visible,td.t input:focus-visible,header a:focus-visible{outline:2px solid var(--goldbr);outline-offset:3px;}
+footer{padding:6vh 0 8vh;font-family:'Archivo',Arial,sans-serif;font-weight:300;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--slate);}
+@media (max-width:880px){
+  header{height:64px;} .brand{gap:12px;} .brand .wordmark{font-size:14px;letter-spacing:.3em;}
+  table{min-width:760px;} .formats table{min-width:900px;}
+  .bar{gap:12px;} .btn{padding:14px 18px;}
+}
+@media print{
+  @page{margin:16mm;}
+  body{background:#fff;color:#000;}
+  header a.back,.bar,.lead a{display:none!important;}
+  header{height:auto;padding:0 0 10px;}
+  .intro{padding:18px 0 8px;}
+  h1{font-size:30px;} h2{font-size:20px;margin:26px 0 8px;}
+  table{font-size:11.5px;} th,td{padding:8px 10px 8px 0;} td.t{font-size:12.5px;}
+  tbody th[scope="rowgroup"]{font-size:13px;}
+  tr{break-inside:avoid;}
+  td.t input{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span><span class="wordmark">Ethan&thinsp;Starke</span></a>
+    <a class="back" href="index.html">Back to the gateway</a>
+  </header>
+  <main>
+    <div class="intro">
+      <div class="eyebrow">Executive education &middot; At a glance</div>
+      <h1>Every session and every format, on one sheet.</h1>
+      <p class="lead">Six territories, thirty-three sessions, eight formats, in the words of the library that governs them. Tick what fits, print it or share it with the people who decide with you, then carry your picks into the request. Nothing here is a price or a promise; the fit is confirmed in a conversation.</p>
+    </div>
+    <form id="sheet">
+      <h2>The sessions, by territory</h2>
+      <div class="tablewrap">
+      <table class="sessions">
+        <thead><tr><th scope="col">Territory</th><th scope="col">Session</th><th scope="col">What it works on</th></tr></thead>
+        <tbody>
+<tr><th scope="rowgroup" rowspan="4"><span class="tn">01</span>Leadership Under Pressure and Decision Quality<div class="sit">The plan exists. The pressure is real. The decisions in between are where the year is won or lost.</div></th><td class="t"><label><input type="checkbox" name="s" value="Decisions Under Uncertainty"><span>Decisions Under Uncertainty</span></label><div class="sub">Presented as &ldquo;Leading Under Pressure: The Decisions No One Sees You Make&rdquo;</div></td><td class="l">Responsible commitment without complete information, and the difference between prudent delay and avoidance.</td></tr>
+<tr><td class="t"><label><input type="checkbox" name="s" value="Executive Judgment"><span>Executive Judgment</span></label></td><td class="l">Experience creates confidence; it does not automatically produce judgment. This session works on the difference.</td></tr>
+<tr><td class="t"><label><input type="checkbox" name="s" value="Strategic Clarity"><span>Strategic Clarity</span></label></td><td class="l">For organizations with plans, goals and initiatives, but no shared answer to what matters most.</td></tr>
+<tr><td class="t"><label><input type="checkbox" name="s" value="Executive Attention"><span>Executive Attention</span></label></td><td class="l">What senior leaders repeatedly attend to becomes what the organization treats as important.</td></tr>
+<tr><th scope="rowgroup" rowspan="5"><span class="tn">02</span>Executive Identity and Authority<div class="sit">Performance problems that keep returning are usually identity patterns wearing a new disguise.</div></th><td class="t"><label><input type="checkbox" name="s" value="Identity Is the Operating System"><span>Identity Is the Operating System</span></label></td><td class="l">Leadership behavior emerges from identity. Work on the operating system, not just the behavior.</td></tr>
+<tr><td class="t"><label><input type="checkbox" name="s" value="Leadership Shadows"><span>Leadership Shadows</span></label><div class="sub">Presented as &ldquo;If a Leader Falls, Who Notices?&rdquo;</div></td><td class="l">The unexamined patterns of a leader become the tolerated patterns of the organization.</td></tr>
+<tr><td class="t"><label><input type="checkbox" name="s" value="Responsibility Without Collapse"><span>Responsibility Without Collapse</span></label></td><td class="l">Carrying responsibility is the job. Carrying everything is the failure mode.</td></tr>
+<tr><td class="t"><label><input type="checkbox" name="s" value="The Executive Mirror"><span>The Executive Mirror</span></label></td><td class="l">Executives evaluate the organization more rigorously than their own contribution to its problems.</td></tr>
+<tr><td class="t"><label><input type="checkbox" name="s" value="Executive Energy and Sustainable Performance"><span>Executive Energy and Sustainable Performance</span></label></td><td class="l">Depletion normalized as commitment is an organizational cost, not a badge.</td></tr>
+<tr><th scope="rowgroup" rowspan="7"><span class="tn">03</span>Organizational Alignment and Culture<div class="sit">Aligned on paper, misaligned in the room: conflicting assumptions, incentives and priorities doing quiet damage.</div></th><td class="t"><label><input type="checkbox" name="s" value="The Alignment Myth"><span>The Alignment Myth</span></label></td><td class="l">Alignment is not agreement or harmony. It is coherence you can operate on.</td></tr>
+<tr><td class="t"><label><input type="checkbox" name="s" value="Anatomy of Misalignment"><span>Anatomy of Misalignment</span></label></td><td class="l">Misalignment is rarely a communication problem. This session diagnoses what it actually is.</td></tr>
+<tr><td class="t"><label><input type="checkbox" name="s" value="Execution Is an Alignment Outcome"><span>Execution Is an Alignment Outcome</span></label></td><td class="l">Execution problems answered with pressure come back. Answered with diagnosis, they close.</td></tr>
+<tr><td class="t"><label><input type="checkbox" name="s" value="Culture as Organizational Evidence"><span>Culture as Organizational Evidence</span></label></td><td class="l">Culture is what the organization rewards, tolerates, repeats and protects.</td></tr>
+<tr><td class="t"><label><input type="checkbox" name="s" value="Alignment Rhythms"><span>Alignment Rhythms</span></label></td><td class="l">Alignment is maintained through rhythm, not declared at the annual retreat.</td></tr>
+<tr><td class="t"><label><input type="checkbox" name="s" value="Organizational Identity"><span>Organizational Identity</span></label></td><td class="l">Mission statements are common. A lived organizational identity is rare.</td></tr>
+<tr><td class="t"><label><input type="checkbox" name="s" value="Becoming an Aligned Organization"><span>Becoming an Aligned Organization</span></label></td><td class="l">One integrated operating picture instead of fragmented improvement initiatives.</td></tr>
+<tr><th scope="rowgroup" rowspan="6"><span class="tn">04</span>Executive Teams, Trust and Accountability<div class="sit">Five capable executives can share a table and still not be a team.</div></th><td class="t"><label><input type="checkbox" name="s" value="Executive Team Effectiveness"><span>Executive Team Effectiveness</span></label></td><td class="l">Shared purpose, role clarity, decision discipline and collective responsibility, worked as a system.</td></tr>
+<tr><td class="t"><label><input type="checkbox" name="s" value="Trust as Infrastructure"><span>Trust as Infrastructure</span></label></td><td class="l">Low trust taxes speed, candor and execution. Trust is infrastructure, not sentiment.</td></tr>
+<tr><td class="t"><label><input type="checkbox" name="s" value="Accountability That Builds Adults"><span>Accountability That Builds Adults</span></label></td><td class="l">Accountability that increases ownership instead of fear, dependency or compliance.</td></tr>
+<tr><td class="t"><label><input type="checkbox" name="s" value="Psychological Safety Without Lowering Standards"><span>Psychological Safety Without Lowering Standards</span></label></td><td class="l">Candor and dignity on one side, demanding standards on the other. Both.</td></tr>
+<tr><td class="t"><label><input type="checkbox" name="s" value="Productive Conflict"><span>Productive Conflict</span></label></td><td class="l">Between artificial harmony and destructive conflict there is a discipline. This is it.</td></tr>
+<tr><td class="t"><label><input type="checkbox" name="s" value="Conversations That Create Reality"><span>Conversations That Create Reality</span></label></td><td class="l">Organizations are shaped by the conversations leaders initiate, avoid, reward and permit.</td></tr>
+<tr><th scope="rowgroup" rowspan="5"><span class="tn">05</span>Leaders and Founders in Transition<div class="sit">The company grew. The complexity grew faster. The leader's operating model has to catch up.</div></th><td class="t"><label><input type="checkbox" name="s" value="Scaling Yourself Before Scaling the Company"><span>Scaling Yourself Before Scaling the Company</span></label><div class="sub">Presented as &ldquo;Clarity Before Scale&rdquo;</div></td><td class="l">Organizational scale requires leadership evolution before it requires more complexity.</td></tr>
+<tr><td class="t"><label><input type="checkbox" name="s" value="From Operator to Architect"><span>From Operator to Architect</span></label></td><td class="l">From solving the work personally to designing the system that accomplishes it.</td></tr>
+<tr><td class="t"><label><input type="checkbox" name="s" value="Reinvention Without Losing Yourself"><span>Reinvention Without Losing Yourself</span></label></td><td class="l">Necessary reinvention without the feeling of betraying what built the success.</td></tr>
+<tr><td class="t"><label><input type="checkbox" name="s" value="Founder Psychology"><span>Founder Psychology</span></label></td><td class="l">The company often becomes an external expression of the founder's internal architecture.</td></tr>
+<tr><td class="t"><label><input type="checkbox" name="s" value="The Founder Bottleneck"><span>The Founder Bottleneck</span></label></td><td class="l">When the capabilities that created the company begin to limit its scale.</td></tr>
+<tr><th scope="rowgroup" rowspan="6"><span class="tn">06</span>Change, Resilience and Institutional Leadership<div class="sit">People do not experience change as a plan. They experience it as a challenge to meaning, competence and belonging.</div></th><td class="t"><label><input type="checkbox" name="s" value="Leading Through Change"><span>Leading Through Change</span></label></td><td class="l">Leadership through uncertainty, transition and disruption, beyond the project plan.</td></tr>
+<tr><td class="t"><label><input type="checkbox" name="s" value="Organizational Resilience"><span>Organizational Resilience</span></label></td><td class="l">Resilience built from relationships, systems, reserves and learning, not from endurance.</td></tr>
+<tr><td class="t"><label><input type="checkbox" name="s" value="Building Adaptive Organizations"><span>Building Adaptive Organizations</span></label></td><td class="l">Learning and adjusting without losing coherence, neither rigid nor reactive.</td></tr>
+<tr><td class="t"><label><input type="checkbox" name="s" value="The Long Game"><span>The Long Game</span></label></td><td class="l">Stewardship of decisions whose full consequences arrive after the leader's tenure.</td></tr>
+<tr><td class="t"><label><input type="checkbox" name="s" value="Institutional Stewardship"><span>Institutional Stewardship</span></label></td><td class="l">Leading the organization as an institution entrusted to you, not an asset belonging to you.</td></tr>
+<tr><td class="t"><label><input type="checkbox" name="s" value="Legacy and Continuity"><span>Legacy and Continuity</span></label></td><td class="l">Legacy is the capacity that remains when the leader is no longer central.</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <h2>The eight formats</h2>
+      <div class="tablewrap formats">
+      <table>
+        <thead><tr><th scope="col">Need</th><th scope="col">Format</th><th scope="col">Duration, room, size</th><th scope="col">Ideal when</th><th scope="col">Outcome or form</th></tr></thead>
+        <tbody>
+<tr><td class="g">Bring in perspective</td><td class="t"><label><input type="radio" name="f" value="Executive Keynote"><span>Executive Keynote</span></label></td><td class="l">30 or 60 minutes · Theater or ballroom · Any size</td><td class="l">the room needs one to three ideas built for reflection, not applause.</td><td class="l">Outcome: leaders leave with a shared mental model they can use the next morning.</td></tr>
+<tr><td class="g">Bring in perspective</td><td class="t"><label><input type="radio" name="f" value="Executive Conversation"><span>Executive Conversation</span></label></td><td class="l">30 to 60 minutes · Fireside or moderated · Conferences, executive dinners, boards</td><td class="l">the program is built around dialogue: a conference session, an executive dinner or a board meeting that wants an exchange rather than an address.</td><td class="l">The form: a moderated conversation, a fireside or an interview; a book conversation when the room wants one.</td></tr>
+<tr><td class="g">Align on a decision</td><td class="t"><label><input type="radio" name="f" value="Executive Roundtable"><span>Executive Roundtable</span></label></td><td class="l">60 to 90 minutes · Boardroom or U-shape · 8 to 25 seats · Off the record</td><td class="l">a senior group needs one theme worked candidly among peers, with nothing on the record.</td><td class="l">The form: a facilitated peer discussion on one theme, senior and off the record, 8 to 25 seats.</td></tr>
+<tr><td class="g">Align on a decision</td><td class="t"><label><input type="radio" name="f" value="Executive Working Session"><span>Executive Working Session</span></label></td><td class="l">90 to 120 minutes · Boardroom, cabaret or U-shape · 12 to 40 seats</td><td class="l">participants bring live decisions and work them with the method: one primary exercise, structured dialogue, written commitments.</td><td class="l">Outcome: leaders leave with one decision clearer and the tools to work the next one.</td></tr>
+<tr><td class="g">Build capability</td><td class="t"><label><input type="radio" name="f" value="Leadership Laboratory or Workshop"><span>Leadership Laboratory or Workshop</span></label></td><td class="l">A half day or a full day · Cabaret or flexible room · 12 to 40 seats</td><td class="l">the aim is capability built through practice: applied learning cycles, four in a half day, six to eight in a full day.</td><td class="l">Outcome: practice, not theory. Leaders leave having run the method on real cases, not having heard about it.</td></tr>
+<tr><td class="g">Build capability</td><td class="t"><label><input type="radio" name="f" value="Leadership Series"><span>Leadership Series</span></label></td><td class="l">Three sessions over weeks or months · or a six-week cohort of 20 to 40</td><td class="l">the change has to hold over months: three executive working sessions spaced across weeks or months, or a six-week hybrid cohort with an in-person kickoff and capstone.</td><td class="l">Outcome: capability that holds, because application between sessions is part of the design.</td></tr>
+<tr><td class="g">Address the organization</td><td class="t"><label><input type="radio" name="f" value="Executive Intensive or Offsite"><span>Executive Intensive or Offsite</span></label></td><td class="l">One or two days · Offsite venue · The leadership team · Retreat form available</td><td class="l">one organizational challenge deserves the whole leadership team, away from the building, for a day or two.</td><td class="l">The form: one or two days around that challenge, with significant preparation before anyone enters the room; retreat form available.</td></tr>
+<tr><td class="g">Address the organization</td><td class="t"><label><input type="radio" name="f" value="Organizational Advisory"><span>Organizational Advisory</span></label></td><td class="l">Ongoing · Begins with a conversation, not a date</td><td class="l">the challenge is organizational and continuous, not a single room on a single day.</td><td class="l">Outcome: it usually opens with an Organizational Pulse Check: confidential leadership interviews and a written report.</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="bar">
+        <span class="count" id="count">Nothing ticked yet</span>
+        <button type="button" class="btn" id="clear">Clear</button>
+        <button type="button" class="btn" id="print">Print this sheet</button>
+        <button type="submit" class="btn gold" id="go">Take my picks to the request</button>
+      </div>
+    </form>
+  </main>
+  <footer>Ethan Starke LLC &middot; ethan@ethanstarke.com &middot; www.ethanstarke.com</footer>
+</div>
+<script>
+(function(){
+  const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+  const count=()=>{ const s=$$('input[name="s"]:checked').length, f=$('input[name="f"]:checked');
+    $('#count').textContent=(s? s+(s===1?' session':' sessions'):'No sessions')+(f? ' and '+f.value : '')+(s||f?' ticked':' ticked yet'); };
+  $$('input').forEach(i=>i.addEventListener('change',count));
+  $('#clear').addEventListener('click',()=>{ $$('input').forEach(i=>i.checked=false); count(); });
+  $('#print').addEventListener('click',()=>window.print());
+  $('#sheet').addEventListener('submit',e=>{
+    e.preventDefault();
+    const picks=$$('input[name="s"]:checked').map(i=>i.value); const f=$('input[name="f"]:checked');
+    const q=new URLSearchParams(); if(picks.length) q.set('pick',picks.join('|')); if(f) q.set('fmt',f.value);
+    location.href='index.html'+(q.toString()?'?'+q.toString():'')+'#s-request';
+  });
+})();
+</script>
+</body>
+</html>

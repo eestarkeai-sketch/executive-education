@@ -32,7 +32,8 @@ function groundAt(y){
   }
   return stops[0][1];
 }
-const groundEl=$('#ground'), emark=$('#emark'), emSec=$('#s-emergence'), reqSec=$('#s-request');
+const groundEl=$('#ground'), emark=$('#emark'), emSec=$('#s-emergence'), reqSec=$('#s-request'), totop=$('#totop');
+totop.addEventListener('click',()=>window.scrollTo({top:0,behavior:reduced?'auto':'smooth'}));
 let ticking=false;
 function frame(){
   ticking=false;
@@ -42,6 +43,7 @@ function frame(){
   const op = p<0.55 ? (p/0.55)*0.12 : Math.max(0,(1-p)/0.45)*0.12;
   emark.style.opacity = op.toFixed(3);
   document.body.classList.toggle('day', reqSec.getBoundingClientRect().top < innerHeight*0.35);
+  const past=scrollY>innerHeight*0.9; totop.hidden=!past; totop.classList.toggle('show',past);
 }
 function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(frame); } }
 addEventListener('scroll', onScroll, {passive:true});
@@ -271,15 +273,18 @@ $$('#q2 .ans').forEach(b=>b.addEventListener('click',()=>{ sel.audience=b.datase
 $$('#q3 .ans').forEach(b=>b.addEventListener('click',()=>{ sel.change=b.dataset.k; step=3; showStep(3); }));
 $$('#q4 .ans').forEach(b=>b.addEventListener('click',()=>{ sel.time=b.dataset.k; step=4; populateReveal(); showStep(4); }));
 
-/* the formats strip */
-const strip=$('#strip');
-const panels=$$('.panel').length;
-$('#fprev').addEventListener('click',()=>strip.scrollBy({left:-strip.clientWidth,behavior:reduced?'auto':'smooth'}));
-$('#fnext').addEventListener('click',()=>strip.scrollBy({left:strip.clientWidth,behavior:reduced?'auto':'smooth'}));
-strip.addEventListener('scroll',()=>{
-  const i=Math.round(strip.scrollLeft/strip.clientWidth);
-  $('#fcount').textContent=String(i+1).padStart(2,'0')+' / '+String(panels).padStart(2,'0');
-},{passive:true});
+/* the two strips: territories and formats, same behavior */
+function initStrip(stripSel,countSel,prevSel,nextSel){
+  const strip=$(stripSel); if(!strip) return;
+  const n=strip.querySelectorAll('.panel').length;
+  const count=()=>{ const i=Math.round(strip.scrollLeft/strip.clientWidth); $(countSel).textContent=String(i+1).padStart(2,'0')+' / '+String(n).padStart(2,'0'); };
+  $(prevSel).addEventListener('click',()=>strip.scrollBy({left:-strip.clientWidth,behavior:reduced?'auto':'smooth'}));
+  $(nextSel).addEventListener('click',()=>strip.scrollBy({left:strip.clientWidth,behavior:reduced?'auto':'smooth'}));
+  strip.addEventListener('scroll',count,{passive:true});
+  addEventListener('resize',count);
+}
+initStrip('#tstrip','#tcount','#tprev','#tnext');
+initStrip('#strip','#fcount','#fprev','#fnext');
 const dio=new IntersectionObserver(es=>es.forEach(e=>{
   if(e.isIntersecting){ e.target.classList.add('draw'); dio.unobserve(e.target); }
 }),{threshold:.45});
@@ -305,6 +310,7 @@ $('#reqform').addEventListener('submit',async e=>{
     when:v('r1'), organization:v('r2'), room:v('r3'), happening:v('r4'),
     format:v('r5'), name:v('r6'), email:v('r7'), notes:v('r8'),
     pathway:inquiry.pathway,
+    picks:inquiry.picks||null,
     selector:inquiry.answers ? {
       answers:Object.fromEntries(Object.entries(inquiry.answers).map(([k,val])=>[k,{key:val,label:LBL[val]||val}])),
       recommendation:inquiry.recommendation
@@ -342,3 +348,17 @@ function miniForm(id, pathway, fields){
 }
 miniForm('#introform','introduce',[['name','#i1'],['email','#i2'],['organization','#i3'],['why','#i4']]);
 miniForm('#subform','subscribe',[['email','#s1']]);
+
+/* picks carried in from the summary sheet: ?pick=Title|Title&fmt=Format#s-request */
+(function(){
+  const q=new URLSearchParams(location.search);
+  const picks=(q.get('pick')||'').split('|').map(s=>s.trim()).filter(Boolean);
+  const fmt=(q.get('fmt')||'').trim();
+  if(!picks.length && !fmt) return;
+  inquiry.pathway='summary-sheet';
+  inquiry.picks={sessions:picks, format:fmt||null};
+  if(fmt) $('#r5').value=fmt;
+  const lines=[]; if(picks.length) lines.push('Sessions of interest: '+picks.join('; ')); if(fmt) lines.push('Format: '+fmt);
+  $('#r8').value='From the summary sheet. '+lines.join('. ')+'.';
+  if(location.hash!=='#s-request') setTimeout(()=>document.querySelector('#s-request').scrollIntoView({behavior:reduced?'auto':'smooth'}),300);
+})();

@@ -23,11 +23,12 @@
 <div id="grain" aria-hidden="true"></div>
 
 <nav id="nav">
-  <div class="wordmark">Ethan&thinsp;Starke</div>
+  <a class="brand" href="#s-hero" data-go="#s-hero" aria-label="Ethan Starke, back to the top"><span class="mark" aria-hidden="true"></span><span class="wordmark">Ethan&thinsp;Starke</span></a>
   <div class="links">
-    <a href="#s-record" data-go="#s-record">Proof</a><a href="#s-t1" data-go="#s-t1">Territories</a><a href="#s-formats" data-go="#s-formats">Formats</a><a href="#s-request" data-go="#s-request">Request</a>
+    <a href="#s-record" data-go="#s-record">Proof</a><a href="#s-territories" data-go="#s-territories">Territories</a><a href="#s-formats" data-go="#s-formats">Formats</a><a href="#s-request" data-go="#s-request">Request</a>
   </div>
 </nav>
+<button type="button" id="totop" hidden><span class="tline" aria-hidden="true"></span>Top</button>
 
 <main>
 <!-- AMBIGUITY -->
@@ -45,7 +46,7 @@
   <div class="heroline hair"></div>
   <button type="button" class="btn-dom fade" data-go="#s-request" data-path="hero-direct"><span class="lbl">Check Ethan's availability</span><span class="arr"></span></button>
   <div class="paths fade">
-    <a class="lnk" href="#s-t1" data-go="#s-t1" data-path="pathway-subject">Address a subject</a>
+    <a class="lnk" href="#s-territories" data-go="#s-territories" data-path="pathway-subject">Address a subject</a>
     <a class="lnk" href="#s-formats" data-go="#s-formats" data-path="pathway-format">Choose a format</a>
   </div>
   <button type="button" class="doorway fade" data-go="#s-selector"><span class="lbl">Find the right session</span><span class="sub">Four questions</span></button>
@@ -138,168 +139,165 @@
     </div>
   </div>
 </section>
-<!-- STRUCTURE: six territories, six compositions -->
-<section id="s-t1" class="terr-sec rv" data-g="#0A1220">
-  <div class="glow lamp"></div>
-  <div class="count">01 / 06</div>
-  <div class="wrap">
-    <div class="eyebrow t-eyebrow fade">Territory one</div>
-    <h2 style="margin-top:3vh;"><span class="mask"><span class="ln">The plan exists. The pressure is real.</span></span><span class="mask"><span class="ln">The decisions in between are where</span></span><span class="mask"><span class="ln">the year is won or lost.</span></span></h2>
-    <div class="sess">
-      <div class="s fade">
+<!-- STRUCTURE: six territories, one strip -->
+<section id="s-territories" class="rv" data-g="#0A1220" data-g2="#16263F">
+  <div class="head">
+    <div class="eyebrow fade">Six territories of executive work</div>
+    <div class="fnav"><span id="tcount">01 / 06</span><button type="button" id="tprev" aria-label="Previous territory">&larr;</button><button type="button" id="tnext" aria-label="Next territory">&rarr;</button></div>
+  </div>
+  <div class="strip" id="tstrip" tabindex="0" aria-label="The six territories">
+    <div class="panel tpanel rv" id="s-t1">
+      <div class="pool"></div>
+      <div class="tnum" aria-hidden="true">01</div>
+      <div class="ptext">
+        <div class="group fade">Territory one &middot; Leadership Under Pressure and Decision Quality</div>
+        <h2><span class="mask"><span class="ln">The plan exists. The pressure is real.</span></span><span class="mask"><span class="ln">The decisions in between are where</span></span><span class="mask"><span class="ln">the year is won or lost.</span></span></h2>
+        <div class="sess">
+          <div class="s fade">
         <h3>Decisions Under Uncertainty</h3>
         <div class="sub">Presented as "Leading Under Pressure: The Decisions No One Sees You Make"</div>
         <p>Responsible commitment without complete information, and the difference between prudent delay and avoidance.</p>
       </div>
-      <div class="s fade">
+          <div class="s fade">
         <h3>Executive Judgment</h3>
         <p style="margin-top:13px;">Experience creates confidence; it does not automatically produce judgment. This session works on the difference.</p>
       </div>
-    </div>
-
-    <button type="button" class="more fade" aria-expanded="false" aria-controls="t1-more" data-open="Fewer sessions" data-closed="Explore additional sessions">Explore additional sessions</button>
-    <div class="moresess" id="t1-more" hidden>
+        </div>
+        <button type="button" class="more fade" aria-expanded="false" aria-controls="t1-more" data-open="Fewer sessions" data-closed="Explore additional sessions">Explore additional sessions</button>
+        <div class="moresess" id="t1-more" hidden>
       <div class="ms"><h4>Strategic Clarity</h4><p>For organizations with plans, goals and initiatives, but no shared answer to what matters most.</p></div>
       <div class="ms"><h4>Executive Attention</h4><p>What senior leaders repeatedly attend to becomes what the organization treats as important.</p></div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
-
-<section id="s-t2" class="terr-sec rv" data-g="#0A1220">
-  <div class="count">02 / 06</div>
-  <div class="wrap">
-    <div class="eyebrow t-eyebrow fade">Territory two</div>
-    <h2 style="margin-top:3vh;"><span class="mask"><span class="ln">Performance problems that keep</span></span><span class="mask"><span class="ln">returning are usually identity</span></span><span class="mask"><span class="ln">patterns wearing a new disguise.</span></span></h2>
-    <div class="sess">
-      <div class="s fade">
+    <div class="panel tpanel rv" id="s-t2">
+      <div class="pool"></div>
+      <div class="tnum" aria-hidden="true">02</div>
+      <div class="ptext">
+        <div class="group fade">Territory two &middot; Executive Identity and Authority</div>
+        <h2><span class="mask"><span class="ln">Performance problems that keep</span></span><span class="mask"><span class="ln">returning are usually identity</span></span><span class="mask"><span class="ln">patterns wearing a new disguise.</span></span></h2>
+        <div class="sess">
+          <div class="s fade">
         <h3>Identity Is the Operating System</h3>
         <p style="margin-top:13px;">Leadership behavior emerges from identity. Work on the operating system, not just the behavior.</p>
       </div>
-      <div class="s fade">
+          <div class="s fade">
         <h3>Leadership Shadows</h3>
         <div class="sub">Presented as "If a Leader Falls, Who Notices?"</div>
         <p>The unexamined patterns of a leader become the tolerated patterns of the organization.</p>
       </div>
-    </div>
-
-    <button type="button" class="more fade" aria-expanded="false" aria-controls="t2-more" data-open="Fewer sessions" data-closed="Explore additional sessions">Explore additional sessions</button>
-    <div class="moresess" id="t2-more" hidden>
+        </div>
+        <button type="button" class="more fade" aria-expanded="false" aria-controls="t2-more" data-open="Fewer sessions" data-closed="Explore additional sessions">Explore additional sessions</button>
+        <div class="moresess" id="t2-more" hidden>
       <div class="ms"><h4>Responsibility Without Collapse</h4><p>Carrying responsibility is the job. Carrying everything is the failure mode.</p></div>
       <div class="ms"><h4>The Executive Mirror</h4><p>Executives evaluate the organization more rigorously than their own contribution to its problems.</p></div>
       <div class="ms"><h4>Executive Energy and Sustainable Performance</h4><p>Depletion normalized as commitment is an organizational cost, not a badge.</p></div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
-
-<section id="s-t3" class="terr-sec rv" data-g="#0B1424">
-  <div class="bignum">03</div>
-  <div class="count">03 / 06</div>
-  <div class="wrap">
-    <div class="eyebrow t-eyebrow fade">Territory three</div>
-    <h2 style="margin-top:3vh;"><span class="mask"><span class="ln">Aligned on paper, misaligned in the</span></span><span class="mask"><span class="ln">room: conflicting assumptions, incentives</span></span><span class="mask"><span class="ln">and priorities doing quiet damage.</span></span></h2>
-    <div class="sess">
-      <div class="s fade">
+    <div class="panel tpanel rv" id="s-t3">
+      <div class="pool"></div>
+      <div class="tnum" aria-hidden="true">03</div>
+      <div class="ptext">
+        <div class="group fade">Territory three &middot; Organizational Alignment and Culture</div>
+        <h2><span class="mask"><span class="ln">Aligned on paper, misaligned in the</span></span><span class="mask"><span class="ln">room: conflicting assumptions, incentives</span></span><span class="mask"><span class="ln">and priorities doing quiet damage.</span></span></h2>
+        <div class="sess">
+          <div class="s fade">
         <h3>The Alignment Myth</h3>
         <p style="margin-top:13px;">Alignment is not agreement or harmony. It is coherence you can operate on.</p>
       </div>
-      <div class="s fade">
+          <div class="s fade">
         <h3>Becoming an Aligned Organization</h3>
         <p style="margin-top:13px;">One integrated operating picture instead of fragmented improvement initiatives.</p>
       </div>
-    </div>
-
-    <button type="button" class="more fade" aria-expanded="false" aria-controls="t3-more" data-open="Fewer sessions" data-closed="Explore additional sessions">Explore additional sessions</button>
-    <div class="moresess" id="t3-more" hidden>
+        </div>
+        <button type="button" class="more fade" aria-expanded="false" aria-controls="t3-more" data-open="Fewer sessions" data-closed="Explore additional sessions">Explore additional sessions</button>
+        <div class="moresess" id="t3-more" hidden>
       <div class="ms"><h4>Anatomy of Misalignment</h4><p>Misalignment is rarely a communication problem. This session diagnoses what it actually is.</p></div>
       <div class="ms"><h4>Execution Is an Alignment Outcome</h4><p>Execution problems answered with pressure come back. Answered with diagnosis, they close.</p></div>
       <div class="ms"><h4>Culture as Organizational Evidence</h4><p>Culture is what the organization rewards, tolerates, repeats and protects.</p></div>
       <div class="ms"><h4>Alignment Rhythms</h4><p>Alignment is maintained through rhythm, not declared at the annual retreat.</p></div>
       <div class="ms"><h4>Organizational Identity</h4><p>Mission statements are common. A lived organizational identity is rare.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="s-t4" class="terr-sec rv" data-g="#0C1526">
-  <div class="divider"></div>
-  <div class="count">04 / 06</div>
-  <div class="wrap">
-    <div class="cols">
-      <div>
-        <div class="eyebrow t-eyebrow fade">Territory four</div>
-        <h2 style="margin-top:3vh;"><span class="mask"><span class="ln">Five capable executives</span></span><span class="mask"><span class="ln">can share a table and</span></span><span class="mask"><span class="ln">still not be a team.</span></span></h2>
+        </div>
       </div>
-      <div class="sess">
-        <div class="s fade">
+    </div>
+    <div class="panel tpanel rv" id="s-t4">
+      <div class="pool"></div>
+      <div class="tnum" aria-hidden="true">04</div>
+      <div class="ptext">
+        <div class="group fade">Territory four &middot; Executive Teams, Trust and Accountability</div>
+        <h2><span class="mask"><span class="ln">Five capable executives</span></span><span class="mask"><span class="ln">can share a table and</span></span><span class="mask"><span class="ln">still not be a team.</span></span></h2>
+        <div class="sess">
+          <div class="s fade">
           <h3>Executive Team Effectiveness</h3>
           <p style="margin-top:13px;">Shared purpose, role clarity, decision discipline and collective responsibility, worked as a system.</p>
         </div>
-        <div class="s fade">
+          <div class="s fade">
           <h3>Trust as Infrastructure</h3>
           <p style="margin-top:13px;">Low trust taxes speed, candor and execution. Trust is infrastructure, not sentiment.</p>
         </div>
-      </div>
-    </div>
-
-    <button type="button" class="more fade" aria-expanded="false" aria-controls="t4-more" data-open="Fewer sessions" data-closed="Explore additional sessions">Explore additional sessions</button>
-    <div class="moresess" id="t4-more" hidden>
+        </div>
+        <button type="button" class="more fade" aria-expanded="false" aria-controls="t4-more" data-open="Fewer sessions" data-closed="Explore additional sessions">Explore additional sessions</button>
+        <div class="moresess" id="t4-more" hidden>
       <div class="ms"><h4>Accountability That Builds Adults</h4><p>Accountability that increases ownership instead of fear, dependency or compliance.</p></div>
       <div class="ms"><h4>Psychological Safety Without Lowering Standards</h4><p>Candor and dignity on one side, demanding standards on the other. Both.</p></div>
       <div class="ms"><h4>Productive Conflict</h4><p>Between artificial harmony and destructive conflict there is a discipline. This is it.</p></div>
       <div class="ms"><h4>Conversations That Create Reality</h4><p>Organizations are shaped by the conversations leaders initiate, avoid, reward and permit.</p></div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
-
-<section id="s-t5" class="terr-sec rv" data-g="#0E1728">
-  <div class="count">05 / 06</div>
-  <div class="wrap">
-    <div class="eyebrow t-eyebrow fade">Territory five</div>
-    <h2 style="margin-top:3vh;"><span class="mask"><span class="ln">The company grew. The complexity</span></span><span class="mask"><span class="ln">grew faster. The leader's operating</span></span><span class="mask"><span class="ln">model has to catch up.</span></span></h2>
-    <div class="sess">
-      <div class="s fade">
+    <div class="panel tpanel rv" id="s-t5">
+      <div class="pool"></div>
+      <div class="tnum" aria-hidden="true">05</div>
+      <div class="ptext">
+        <div class="group fade">Territory five &middot; Leaders and Founders in Transition</div>
+        <h2><span class="mask"><span class="ln">The company grew. The complexity</span></span><span class="mask"><span class="ln">grew faster. The leader's operating</span></span><span class="mask"><span class="ln">model has to catch up.</span></span></h2>
+        <div class="sess">
+          <div class="s fade">
         <h3>Scaling Yourself Before Scaling the Company</h3>
         <div class="sub">Presented in founder rooms as "Clarity Before Scale"</div>
         <p>Organizational scale requires leadership evolution before it requires more complexity.</p>
       </div>
-      <div class="s fade">
+          <div class="s fade">
         <h3>From Operator to Architect</h3>
         <p style="margin-top:13px;">From solving the work personally to designing the system that accomplishes it.</p>
       </div>
-    </div>
-
-    <button type="button" class="more fade" aria-expanded="false" aria-controls="t5-more" data-open="Fewer sessions" data-closed="Explore additional sessions">Explore additional sessions</button>
-    <div class="moresess" id="t5-more" hidden>
+        </div>
+        <button type="button" class="more fade" aria-expanded="false" aria-controls="t5-more" data-open="Fewer sessions" data-closed="Explore additional sessions">Explore additional sessions</button>
+        <div class="moresess" id="t5-more" hidden>
       <div class="ms"><h4>Reinvention Without Losing Yourself</h4><p>Necessary reinvention without the feeling of betraying what built the success.</p></div>
       <div class="ms"><h4>Founder Psychology</h4><p>The company often becomes an external expression of the founder's internal architecture.</p></div>
       <div class="ms"><h4>The Founder Bottleneck</h4><p>When the capabilities that created the company begin to limit its scale.</p></div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
-
-<section id="s-t6" class="terr-sec rv" data-g="#122036" data-g2="#16263F">
-  <div class="count">06 / 06</div>
-  <div class="wrap">
-    <div class="eyebrow t-eyebrow fade">Territory six</div>
-    <h2 style="margin-top:3vh;"><span class="mask"><span class="ln">People do not experience change as a</span></span><span class="mask"><span class="ln">plan. They experience it as a challenge</span></span><span class="mask"><span class="ln"><span class="lastclause">to meaning, competence and belonging.</span></span></span></h2>
-    <div class="sess">
-      <div class="s fade">
+    <div class="panel tpanel rv" id="s-t6">
+      <div class="pool"></div>
+      <div class="tnum" aria-hidden="true">06</div>
+      <div class="ptext">
+        <div class="group fade">Territory six &middot; Change, Resilience and Institutional Leadership</div>
+        <h2><span class="mask"><span class="ln">People do not experience change as a</span></span><span class="mask"><span class="ln">plan. They experience it as a challenge</span></span><span class="mask"><span class="ln"><span class="lastclause">to meaning, competence and belonging.</span></span></span></h2>
+        <div class="sess">
+          <div class="s fade">
         <h3>Leading Through Change</h3>
         <p style="margin-top:13px;">Leadership through uncertainty, transition and disruption, beyond the project plan.</p>
       </div>
-      <div class="s fade">
+          <div class="s fade">
         <h3>Institutional Stewardship</h3>
         <p style="margin-top:13px;">Leading the organization as an institution entrusted to you, not an asset belonging to you.</p>
       </div>
-    </div>
-
-    <button type="button" class="more fade" aria-expanded="false" aria-controls="t6-more" data-open="Fewer sessions" data-closed="Explore additional sessions">Explore additional sessions</button>
-    <div class="moresess" id="t6-more" hidden>
+        </div>
+        <button type="button" class="more fade" aria-expanded="false" aria-controls="t6-more" data-open="Fewer sessions" data-closed="Explore additional sessions">Explore additional sessions</button>
+        <div class="moresess" id="t6-more" hidden>
       <div class="ms"><h4>Organizational Resilience</h4><p>Resilience built from relationships, systems, reserves and learning, not from endurance.</p></div>
       <div class="ms"><h4>Building Adaptive Organizations</h4><p>Learning and adjusting without losing coherence, neither rigid nor reactive.</p></div>
       <div class="ms"><h4>The Long Game</h4><p>Stewardship of decisions whose full consequences arrive after the leader's tenure.</p></div>
       <div class="ms"><h4>Legacy and Continuity</h4><p>Legacy is the capacity that remains when the leader is no longer central.</p></div>
+        </div>
+      </div>
     </div>
   </div>
+  <div class="strip-foot"><a class="lnk" href="summary.html">All sessions and formats at a glance, to print or share</a></div>
 </section>
 
 <!-- the room -->
@@ -317,9 +315,9 @@
 <section id="s-formats" class="rv" data-g="#0E1728">
   <div class="head">
     <div class="eyebrow fade">The eight formats, in the order of the ladder</div>
-    <div id="fnav"><span id="fcount">01 / 08</span><button type="button" id="fprev" aria-label="Previous format">&larr;</button><button type="button" id="fnext" aria-label="Next format">&rarr;</button></div>
+    <div class="fnav"><span id="fcount">01 / 08</span><button type="button" id="fprev" aria-label="Previous format">&larr;</button><button type="button" id="fnext" aria-label="Next format">&rarr;</button></div>
   </div>
-  <div id="strip" tabindex="0" aria-label="The eight formats">
+  <div class="strip" id="strip" tabindex="0" aria-label="The eight formats">
     <div class="panel">
       <div class="pool"></div>
       <div class="ptext">
@@ -536,6 +534,7 @@
       </svg>
     </div>
   </div>
+  <div class="strip-foot"><a class="lnk" href="summary.html">Compare all eight formats on one sheet</a></div>
 </section>
 
 <!-- HUMAN OPERATOR -->
