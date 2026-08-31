@@ -295,7 +295,7 @@ function makeRef(){
 /* Submission pipeline: the Apps Script endpoint (endpoint/Code.gs). The URL is set
    at deployment via window.EEG_ENDPOINT or the constant below; until then the form
    completes locally so the experience can be walked end to end. */
-const ENDPOINT_FALLBACK='';
+const ENDPOINT_FALLBACK='https://script.google.com/macros/s/AKfycbzMDkV2vm9i9Vdvc8FJ1s8PiXoISmtbs_taeGSBEOgQlx1Hs5SUqOxFG9nJJ4C3cflAuw/exec';
 $('#reqform').addEventListener('submit',async e=>{
   e.preventDefault();
   const ref=makeRef();
