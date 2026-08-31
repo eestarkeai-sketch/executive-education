@@ -62,6 +62,16 @@ function wireGo(el){
 }
 $$('[data-go]').forEach(wireGo);
 
+/* each territory can open the rest of its canonical sessions */
+$$('button.more').forEach(b=>b.addEventListener('click',()=>{
+  const t=document.getElementById(b.getAttribute('aria-controls')); if(!t) return;
+  const open=t.hidden;
+  if(open){ t.hidden=false; requestAnimationFrame(()=>requestAnimationFrame(()=>t.classList.add('open'))); }
+  else { t.classList.remove('open'); t.hidden=true; }
+  b.setAttribute('aria-expanded',String(open));
+  b.textContent=open ? b.dataset.open : b.dataset.closed;
+}));
+
 /* ============================================================
    THE SCREENING: four-answer routing engine
    Derived from the sealed Executive Topics Library (territories

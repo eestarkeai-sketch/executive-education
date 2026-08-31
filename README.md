@@ -18,21 +18,34 @@ motion pass at phone size. Formats strip completed the same day: all eight canon
 ladder order (Keynote, Conversation, Roundtable, Working Session, Laboratory or Workshop, Series,
 Intensive or Offsite, Advisory), each with its line drawing, group label, facts line and the
 staff-delivery line where the ruling places it; copy stays inside the sealed Commercial Architecture
-and the gateway copy document, no natural-next-step language on the buyer page. Remaining before
-launch, in order. Below the fold is built (same day): programs, the institutional lane, the
+and the gateway copy document, no natural-next-step language on the buyer page. Below the fold is
+built (same day): programs, the institutional lane, the
 introduction line and The Starke Perspective subscription, in daylight after the request, wired
 through the same endpoint (pathways pathway-programs, pathway-institutional, introduce, subscribe;
 Code.gs lands introductions and subscriptions on their own sheets and emails the office). HELD:
 the handbook download, because the printed handbook carries prices and the held practice figures;
 it returns only on Ethan's decision (a gateway edition, or as printed).
+QA pass completed 2026-08-31 (Joshua): all 1,764 selector combinations verified against an
+independent transcription of the routing matrix; every session title and line on the page and in
+the engine matches Gateway_Copy_v1 word for word; no prices, figures, testimonials, framework names
+or bench names anywhere; keyboard operation end to end (inactive selector steps are out of the tab
+order, the strip is keyboard-scrollable, disclosure buttons carry aria-expanded); landmarks and
+heading order clean under axe-core; reduced motion static at desktop and phone; the display face
+renders correctly at both pixel densities. Two corrections from QA: each territory now opens its
+remaining canonical sessions in place (all 33 Library sessions are on the page; seven were
+unreachable before), and the quietest text was lifted to WCAG AA contrast against its real ground
+(answer buttons, counters, notes, small labels, daylight gold labels via --goldink, placeholders,
+day-mode nav). Favicon and touch icon built from the mark; share meta added without an image.
+
+Remaining, Ethan's hands, batched:
 1. Endpoint: deploy endpoint/Code.gs as a web app, set ENDPOINT_FALLBACK in js/gateway.js (or window.EEG_ENDPOINT).
 2. Subscriptions currently reach the office by email and sheet; connect to the newsletter tool of record when chosen.
-3. Replace prototype typefaces with the licensed faces of record when purchased (drop-in @font-face swap).
-4. QA against the locked spec, both pixel densities, reduced motion, keyboard.
+3. Licensed typefaces, if and when purchased (drop-in @font-face swap; the self-hosted open faces are production-ready as they stand).
 
 ## Cutover runbook (Ethan's hands, batched, about five minutes in Wix)
-1. Repo: eestarkeai-sketch/executive-education (create private; flip public and enable Pages
-   from main when QA passes; CNAME file is already in the bundle).
+1. Repo: eestarkeai-sketch/executive-education (private; flip public and enable Pages from
+   main; CNAME file is already in the bundle). In the same commit, remove the line
+   <meta name="robots" content="noindex"> from index.html so the page can be indexed.
 2. DNS: in the Wix domain zone, ADD a CNAME record: executive-education -> eestarkeai-sketch.github.io
    (additive; touch nothing else).
 3. Wix URL Redirect Manager: /speaking, /creativity, /executive-education -> https://executive-education.ethanstarke.com
