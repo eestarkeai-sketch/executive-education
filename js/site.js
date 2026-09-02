@@ -90,6 +90,16 @@ addEventListener('click',ev=>{
   });
 });
 
+/* nav: the phone menu */
+const mtoggle=$('.menu-toggle'), mmenu=$('#mobile-menu');
+if(mtoggle && mmenu){
+  const set=open=>{ mmenu.hidden=!open; mtoggle.setAttribute('aria-expanded',String(open)); mtoggle.textContent=open?'Close':'Menu'; };
+  mtoggle.addEventListener('click',()=>set(mmenu.hidden));
+  mmenu.addEventListener('click',ev=>{ if(ev.target.closest('a')) set(false); });
+  addEventListener('keydown',ev=>{ if(ev.key==='Escape' && !mmenu.hidden) set(false); });
+  addEventListener('resize',()=>{ if(innerWidth>880 && !mmenu.hidden) set(false); });
+}
+
 /* each territory can open the rest of its canonical sessions */
 $$('button.more').forEach(b=>b.addEventListener('click',()=>{
   const t=document.getElementById(b.getAttribute('aria-controls')); if(!t) return;

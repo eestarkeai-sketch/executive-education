@@ -465,6 +465,9 @@ body.day #nav .links a.begin:hover{background:var(--gold);border-color:var(--gol
 body.day .more-menu{background:rgba(251,246,234,.98);border-color:rgba(138,109,47,.25);}
 #nav .links a:focus-visible{outline:2px solid var(--goldlt);outline-offset:4px;}
 
+/* the phone menu: hidden above 880px, where the full nav shows */
+.menu-toggle,.mobile-menu{display:none;}
+
 /* the record's grammar, available to every page */
 #s-ways,#s-parties,#s-shapes,#s-forms,#s-model,#s-filters,#s-fields,#s-roster,#s-preview{padding:16vh 0 12vh;}
 .entry h2{font-weight:340;font-size:clamp(30px,2.9vw,46px);color:var(--creamhi);}
@@ -524,8 +527,24 @@ footer a:hover{border-color:var(--gold);}
 }
 
 @media (max-width:880px){
+  #nav .brand{flex-shrink:0;}
+  #nav .wordmark{white-space:nowrap;font-size:13px;letter-spacing:.26em;}
+  #nav .links{gap:10px;}
+  /* the hero's side paths wrap on a phone instead of running off the edge */
+  #s-hero .paths{flex-wrap:wrap;row-gap:14px;}
   #nav .links a.begin{display:inline-block;padding:9px 14px;font-size:10px;}
   .more-menu{display:none!important;}
+  .menu-toggle{display:inline-block;background:none;border:none;font-family:var(--sans);font-weight:400;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(241,233,214,.8);padding:9px 0 9px 6px;cursor:pointer;transition:color .4s ease;}
+  .menu-toggle:focus-visible{outline:2px solid var(--goldlt);outline-offset:4px;}
+  body.day .menu-toggle{color:rgba(32,36,43,.85);}
+  .mobile-menu{display:flex;flex-direction:column;position:fixed;top:64px;left:0;right:0;z-index:79;padding:16px 6vw 30px;background:rgba(6,10,20,.97);border-bottom:1px solid rgba(241,233,214,.1);backdrop-filter:blur(8px);}
+  .mobile-menu a{font-family:var(--sans);font-weight:400;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(241,233,214,.82);text-decoration:none;padding:15px 0;border-bottom:1px solid rgba(241,233,214,.08);}
+  .mobile-menu a.current{color:var(--goldlt);}
+  .mobile-menu a.mm-begin{margin-top:18px;border:1px solid rgba(199,162,78,.55);padding:13px 16px;text-align:center;color:var(--cream);}
+  body.day .mobile-menu{background:rgba(251,246,234,.98);border-color:rgba(138,109,47,.25);}
+  body.day .mobile-menu a{color:rgba(32,36,43,.85);border-color:rgba(138,109,47,.18);}
+  body.day .mobile-menu a.current{color:var(--goldink);}
+  body.day .mobile-menu a.mm-begin{border-color:rgba(138,109,47,.6);color:var(--ink);}
   #s-ways,#s-parties,#s-shapes,#s-forms,#s-model,#s-filters,#s-fields,#s-roster,#s-preview{padding:12vh 0 8vh;}
   .entry h2{font-size:clamp(26px,6.8vw,34px);}
   .entry p{font-size:16px;}

@@ -100,20 +100,30 @@ document is not edited; the correction belongs in the Portfolio errata record on
 Built to the architecture sealed on 2026-09-02 and the decisions of the same day. The single page
 became a site: /, /organizational-engagements (the gateway's own
 sections, with the four questions moved to /catalogue/organizational), /underwritten-public-programs,
-/academic-engagements, /programs (the library's architecture and one template page, no inventory),
-/proof (with one evidence record), /starke-foundry, /starke-experience (the individual call to
-action is one swappable element, data-swap), and /catalogue with six Phase 1 journey pages, each
-holding one block marked data-journey that Phase 2 replaces in place. Speak With Someone sits on
-every page and lands on the endpoint's Introductions sheet (pathway introduce). Nothing else in
-endpoint/Code.gs changed.
+/academic-engagements, /programs (the library's architecture, no inventory), /proof (with one
+evidence record), /starke-foundry, /starke-experience (the individual call to action is one
+swappable element, data-swap), and /catalogue with six Phase 1 journey pages, each holding one
+block marked data-journey that Phase 2 replaces in place. Speak With Someone sits on every page
+and lands on the endpoint's Introductions sheet (pathway introduce). Nothing else in
+endpoint/Code.gs changed. The Program page template lives in build/pages/programs-template.html
+with publish: no, so it stays in the build and is not a public route.
 
 Pages are assembled, not hand-edited: `python3 build/assemble.py` from the repo root reads
 build/pages/*.html (a small header of key: value lines, a blank line, then the body) and wraps
 each in build/partials (head, nav, speak, footer), writing the public files. Edit the partials or
 the page bodies, never the generated files. js/gateway.js was split into js/site.js (shared,
 every dependency optional) and js/finder.js (the four questions and the request, loaded on
-/catalogue/organizational only); gateway.js stays in the tree, unreferenced, until the branch is
-reviewed. css/gateway.css is untouched above the marked "PHASE 1 ADDITIONS" block.
+/catalogue/organizational only) and then deleted on the pre-merge correction pass, every one of
+its 34 top-level definitions having been reconfirmed in the two files. css/gateway.css is
+untouched above the marked "PHASE 1 ADDITIONS" block.
+
+Pre-merge correction pass (same day, on Ethan's review): underwriter and host benefits are
+described as configured, approved Rights rather than entitlements; the host journey asks about
+underwriting restrictions, approvals and capability rather than how funds are received; the proof
+standing line states the governed rule (confidential by default, named evidence only where
+permission allows); The Starke Experience describes certification as the Level 3 coach-training
+pathway with its own requirements; the template route is unpublished; a phone menu was added; the
+blanket direct-award claim was removed from the Academic page.
 
 Not built here by ruling: sessions, save and resume, matching, ESCOS, the seller corpus, and any
 program inventory. Nothing on this branch is published; main still serves the sealed single page.
