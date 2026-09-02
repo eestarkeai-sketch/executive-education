@@ -436,3 +436,112 @@ body>footer{margin-top:8vh;}
 @media (max-width:880px) and (prefers-reduced-motion:reduce){
   .tpanel h2{transition:none;opacity:1;transform:none;}
 }
+
+/* ============================================================
+   PHASE 1 ADDITIONS (branch phase-1-public-shell, 2 September 2026)
+   Everything above this line is the sealed gateway stylesheet, untouched.
+   These rules serve the multi-page shell: the shared nav, the sections
+   the new pages add, and the elements the gateway drew as buttons that
+   are now links between pages.
+   ============================================================ */
+
+/* buttons that became links */
+a.btn-dom,a.doorway{text-decoration:none;color:inherit;}
+a.doorway .lbl,a.doorway .sub{display:block;}
+
+/* nav: more sections than the gateway had */
+#nav .links{align-items:center;}
+#nav .links a.navlink.current{color:var(--goldlt);}
+body.day #nav .links a.navlink.current{color:var(--goldink);}
+#nav .links a.begin{border:1px solid rgba(199,162,78,.55);padding:11px 18px;color:var(--cream);transition:color .4s ease,background .4s ease,border-color .4s ease;}
+#nav .links a.begin:hover{background:var(--gold);border-color:var(--gold);color:var(--nblk2);}
+body.day #nav .links a.begin{border-color:rgba(138,109,47,.6);color:var(--ink);}
+body.day #nav .links a.begin:hover{background:var(--gold);border-color:var(--gold);color:var(--nblk2);}
+.more-wrap{position:relative;display:inline-flex;align-items:center;align-self:stretch;}
+.more-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);margin-top:22px;display:none;flex-direction:column;gap:16px;min-width:230px;padding:24px 28px;background:rgba(6,10,20,.97);border:1px solid rgba(241,233,214,.1);}
+.more-menu::before{content:'';position:absolute;left:0;right:0;top:-23px;height:23px;}
+.more-wrap:hover .more-menu,.more-wrap:focus-within .more-menu,.more-wrap.open .more-menu{display:flex;}
+#nav .links .more-menu a{white-space:nowrap;}
+body.day .more-menu{background:rgba(251,246,234,.98);border-color:rgba(138,109,47,.25);}
+#nav .links a:focus-visible{outline:2px solid var(--goldlt);outline-offset:4px;}
+
+/* the record's grammar, available to every page */
+#s-ways,#s-parties,#s-shapes,#s-forms,#s-model,#s-filters,#s-fields,#s-roster,#s-preview{padding:16vh 0 12vh;}
+.entry h2{font-weight:340;font-size:clamp(30px,2.9vw,46px);color:var(--creamhi);}
+.entry p{margin-top:14px;font-weight:300;font-size:18px;line-height:1.6;color:rgba(154,166,184,.92);max-width:1100px;}
+.sep{width:320px;margin:64px 0;}
+.conf{margin-top:90px;font-style:italic;font-weight:300;font-size:17px;color:rgba(154,166,184,.75);}
+.conf a,#s-hero .eyebrow a{color:rgba(220,192,122,.9);text-decoration:none;border-bottom:1px solid rgba(199,162,78,.4);padding-bottom:2px;transition:border-color .3s;}
+.conf a:hover,#s-hero .eyebrow a:hover{border-color:var(--goldlt);}
+.way{color:inherit;text-decoration:none;border-bottom:1px solid rgba(199,162,78,.35);padding-bottom:4px;transition:border-color .3s,color .3s;}
+.way:hover{color:var(--goldlt);border-color:var(--goldlt);}
+.way:focus-visible,.conf a:focus-visible,footer a:focus-visible{outline:2px solid var(--goldlt);outline-offset:3px;}
+#s-filters p,#s-roster p{font-weight:300;font-size:19px;line-height:1.65;color:rgba(200,209,222,.92);max-width:800px;}
+#s-preview h2{margin-top:16px;font-weight:340;font-size:clamp(30px,2.9vw,46px);color:var(--creamhi);}
+#s-preview p{margin-top:18px;font-weight:300;font-size:18px;line-height:1.6;color:rgba(154,166,184,.92);max-width:760px;}
+#s-preview .doorway{margin-top:6vh;}
+
+/* hero: a wrapped call to action takes the button's cell. The Experience page's swappable
+   component and the Phase 1 journey blocks are the two cases. */
+#s-hero [data-swap],#s-hero [data-journey]{grid-column:2/5;grid-row:2;align-self:center;position:relative;z-index:2;}
+#s-hero [data-swap]{grid-column:2;}
+#s-hero [data-journey] p{margin-bottom:26px;line-height:1.6;}
+#s-hero [data-swap] .btn-dom,#s-hero [data-journey] .btn-dom{margin-left:2px;}
+
+/* a compact hero for pages whose content must be reachable on the first screen (/catalogue) */
+#s-hero.compact{height:auto;min-height:0;display:block;padding:calc(84px + 12vh) 8vw 6vh 7.8vw;}
+#s-hero.compact .eyebrow{position:static;margin-bottom:26px;}
+#s-hero.compact h1{position:static;font-size:clamp(48px,5.2vw,84px);}
+#s-hero.compact .prop{width:min(640px,max(42vw,610px));margin:28px 0 0;}
+#s-hero.compact .heroline{width:14vw;margin-top:28px;}
+
+/* /catalogue: six doorways, one sentence each */
+#s-routes{padding:4vh 0 12vh;}
+.routes{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.routes .doorway{width:100%;height:auto;min-height:118px;padding:30px 36px 30px 30px;}
+.routes .doorway .lbl{font-family:var(--serif);font-weight:340;font-size:clamp(19px,1.5vw,23px);letter-spacing:-.005em;text-transform:none;line-height:1.3;color:var(--creamhi);}
+.routes .conf{grid-column:1/-1;margin-top:40px;}
+
+/* Speak With Someone, on every page, in daylight. The dawn gap is the empty strip where the ground blends to cream. */
+.dawn-gap{height:46vh;}
+#s-speak{padding:6vh 0 2vh;color:var(--ink);}
+#s-speak .line{border-bottom:none;}
+
+/* footer links */
+footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(138,109,47,.35);padding-bottom:2px;transition:border-color .3s;}
+footer a:hover{border-color:var(--gold);}
+
+@media (min-width:881px){
+  /* the hero's side paths keep a gap from the button whatever the labels' length */
+  #s-hero .paths{margin-left:36px;}
+  #s-hero .paths .lnk{white-space:nowrap;}
+}
+
+@media (max-width:1180px){
+  #nav .links{gap:22px;}
+  #nav .links a{letter-spacing:.2em;}
+  #nav .links a.begin{padding:9px 14px;}
+}
+
+@media (max-width:880px){
+  #nav .links a.begin{display:inline-block;padding:9px 14px;font-size:10px;}
+  .more-menu{display:none!important;}
+  #s-ways,#s-parties,#s-shapes,#s-forms,#s-model,#s-filters,#s-fields,#s-roster,#s-preview{padding:12vh 0 8vh;}
+  .entry h2{font-size:clamp(26px,6.8vw,34px);}
+  .entry p{font-size:16px;}
+  .sep{width:40vw;margin:44px 0;}
+  .conf{margin-top:56px;font-size:15.5px;}
+  #s-preview h2{font-size:clamp(26px,6.8vw,34px);}
+  #s-preview p,#s-filters p,#s-roster p{font-size:16px;}
+  #s-hero [data-journey] p{font-size:14px;}
+  #s-hero [data-swap],#s-hero [data-journey]{align-self:stretch;width:100%;}
+  #s-hero.compact{min-height:0;padding:max(104px,16svh) 6vw 24px;}
+  #s-hero.compact .eyebrow{margin-bottom:18px;}
+  #s-hero.compact .prop{width:100%;max-width:520px;margin:18px 0 0;}
+  #s-hero.compact .heroline{margin:16px 0 0;}
+  .routes{grid-template-columns:1fr;gap:12px;}
+  .routes .doorway{min-height:96px;padding:22px 24px;}
+  .routes .doorway .lbl{font-size:18px;}
+  .dawn-gap{height:34vh;}
+  #s-speak{padding:5vh 0 0;}
+}

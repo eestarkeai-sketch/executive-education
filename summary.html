@@ -73,8 +73,8 @@ footer{padding:6vh 0 8vh;font-family:'Archivo',Arial,sans-serif;font-weight:300;
 <body>
 <div class="wrap">
   <header>
-    <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span><span class="wordmark">Ethan&thinsp;Starke</span></a>
-    <a class="back" href="index.html">Back to the gateway</a>
+    <a class="brand" href="/organizational-engagements"><span class="mark" aria-hidden="true"></span><span class="wordmark">Ethan&thinsp;Starke</span></a>
+    <a class="back" href="/organizational-engagements">Back to Organizational Engagements</a>
   </header>
   <main>
     <div class="intro">
@@ -162,7 +162,7 @@ footer{padding:6vh 0 8vh;font-family:'Archivo',Arial,sans-serif;font-weight:300;
     e.preventDefault();
     const picks=$$('input[name="s"]:checked').map(i=>i.value); const f=$('input[name="f"]:checked');
     const q=new URLSearchParams(); if(picks.length) q.set('pick',picks.join('|')); if(f) q.set('fmt',f.value);
-    location.href='index.html'+(q.toString()?'?'+q.toString():'')+'#s-request';
+    location.href='/catalogue/organizational'+(q.toString()?'?'+q.toString():'')+'#s-request';
   });
 })();
 </script>

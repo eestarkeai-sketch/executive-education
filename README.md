@@ -95,3 +95,25 @@ Ethan wants it; not built.
 Still carrying the older framing and not changed here: Gateway_Spec_v1.0_LOCKED Part 11.2 names
 executive-education.ethanstarke.com as the CNAME of record. That is now superseded. The locked
 document is not edited; the correction belongs in the Portfolio errata record on Ethan's word.
+
+## Phase 1: the public shell (branch phase-1-public-shell, 2026-09-02)
+Built to the architecture sealed on 2026-09-02 and the decisions of the same day. The single page
+became a site: /, /organizational-engagements (the gateway's own
+sections, with the four questions moved to /catalogue/organizational), /underwritten-public-programs,
+/academic-engagements, /programs (the library's architecture and one template page, no inventory),
+/proof (with one evidence record), /starke-foundry, /starke-experience (the individual call to
+action is one swappable element, data-swap), and /catalogue with six Phase 1 journey pages, each
+holding one block marked data-journey that Phase 2 replaces in place. Speak With Someone sits on
+every page and lands on the endpoint's Introductions sheet (pathway introduce). Nothing else in
+endpoint/Code.gs changed.
+
+Pages are assembled, not hand-edited: `python3 build/assemble.py` from the repo root reads
+build/pages/*.html (a small header of key: value lines, a blank line, then the body) and wraps
+each in build/partials (head, nav, speak, footer), writing the public files. Edit the partials or
+the page bodies, never the generated files. js/gateway.js was split into js/site.js (shared,
+every dependency optional) and js/finder.js (the four questions and the request, loaded on
+/catalogue/organizational only); gateway.js stays in the tree, unreferenced, until the branch is
+reviewed. css/gateway.css is untouched above the marked "PHASE 1 ADDITIONS" block.
+
+Not built here by ruling: sessions, save and resume, matching, ESCOS, the seller corpus, and any
+program inventory. Nothing on this branch is published; main still serves the sealed single page.
