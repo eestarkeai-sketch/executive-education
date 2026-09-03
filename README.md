@@ -126,4 +126,12 @@ pathway with its own requirements; the template route is unpublished; a phone me
 blanket direct-award claim was removed from the Academic page.
 
 Not built here by ruling: sessions, save and resume, matching, ESCOS, the seller corpus, and any
-program inventory. Nothing on this branch is published; main still serves the sealed single page.
+program inventory. This shell was merged to main and became the live site served through GitHub Pages, replacing the single page.
+
+## Phase 2 cutover: this repo is now the rollback origin (2026-09-03)
+
+Phase 2, the Next.js application in the private repository eestarkeai-sketch/executive-engagements, is live at executive-engagements.ethanstarke.com on Vercel. On 2026-09-03, on Ethan's ruling, the executive-engagements CNAME in the Wix zone was changed from eestarkeai-sketch.github.io to Vercel (06994639717b3a91.vercel-dns-016.com). Only that one record changed; the Google Workspace MX records and the SPF, DKIM and DMARC records were left exactly as they were. The Vercel deployment serves all sixteen public routes byte-identical to this repo's build, verified against the live domain after the cutover, so the change is invisible to visitors.
+
+This repository stays deployed and unchanged as the temporary rollback origin, reachable at eestarkeai-sketch.github.io. To roll back, set the executive-engagements CNAME value back to eestarkeai-sketch.github.io and GitHub Pages serves this build again within the DNS TTL; the repo's CNAME file is left in place so the custom domain rebinds immediately. The rollback window is one month: this origin is retired on 2026-10-03 unless Ethan extends it.
+
+This is the archival commit. Phase 1 is sealed.
